@@ -1,0 +1,45 @@
+astroid==2.5.3
+backcall==0.2.0
+certifi==2021.10.8
+chardet==3.0.4
+colorama==0.4.4
+decorator==5.0.7
+docopt==0.6.2
+idna==2.8
+ipykernel==4.6.1
+
+ipython==5.5.0
+ipython-genutils==0.2.0
+isort==5.8.0
+jedi==0.18.0
+jupyter-client==6.1.12
+jupyter-core==4.7.1
+lazy-object-proxy==1.6.0
+matplotlib-inline==0.1.2
+mccabe==0.6.1
+numpy==1.21.4
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+opencv-contrib-python==4.5.4.60
+opencv-python==4.5.4.60
+parso==0.8.2
+pickleshare==0.7.5
+Pillow==8.4.0
+pipreqs==0.4.11
+portpicker==1.2.0
+prompt-toolkit==1.0.18
+PyAutoGUI @ file:///D:/bld/pyautogui_1634124302162/work
+Pygments==2.9.0
+pylint==2.7.4
+PyMsgBox @ file:///home/conda/feedstock_root/build_artifacts/pymsgbox_1602398310849/work
+pyperclip @ file:///home/conda/feedstock_root/build_artifacts/pyperclip_1622337600177/work
+PyScreeze @ file:///home/conda/feedstock_root/build_artifacts/pyscreeze_1618749600070/work
+pytesseract @ file:///home/conda/feedstock_root/build_artifacts/pytesseract_1622914748230/work
+PyTweening==1.0.3
+pyzmq==22.0.3
+requests==2.21.0
+simplegeneric==0.8.1
+toml==0.10.2
+traitlets==5.0.5
+urllib3==1.24.3
+wcwidth==0.2.5
+yarg==0.1.9
