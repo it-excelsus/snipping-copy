@@ -2,10 +2,8 @@ from sys import platform
 from tkinter import *
 import pyautogui
 
-import time
-
 import datetime
-from video_analyze import write_frame_to_clipbord
+from ocr.ocr_recognizer import image_to_clipboard
 
 
 class Application():
@@ -18,41 +16,37 @@ class Application():
         self.curX = None
         self.curY = None
 
-        # root.configure(background = 'red')
-        # root.attributes("-transparentcolor","red")
+#645CBB
+#A084DC
+#BFACE2
+#EBC7E6
 
-        #root.attributes("-transparent", "blue")
-        root.geometry('400x50+200+200')  # set new geometry
+        root.geometry('300x50+200+200')  # set new geometry
+        root.title('Metal Cypher')
         
-        if platform == "linux":
-            root.title('Snipping Copy Linux')
-            #root.iconbitmap('img/cut_knife.xbm')
-        elif platform == "darwin":
-            print("osx")
-        elif platform == "win32":
-            root.title('Snipping Copy Windows')
-            root.iconbitmap('img/cut_knife.ico')
-        self.menu_frame = Frame(master, bg="blue")
+        self.menu_frame = Frame(master, bg="#A084DC")
         self.menu_frame.pack(fill=BOTH, expand=YES)
 
-        self.buttonBar = Frame(self.menu_frame,bg="")
+        self.buttonBar = Frame(self.menu_frame,bg="#645CBB")
         self.buttonBar.pack(fill=BOTH,expand=YES)
 
-        self.snipButton = Button(self.buttonBar, width=3, command=self.createScreenCanvas, background="green")
+        self.snipButton = Button(self.buttonBar, width=15, command=self.createScreenCanvas, bg="#EBC7E6", text="Copy from Image")
         self.snipButton.pack(expand=YES)
 
         self.master_screen = Toplevel(root)
         self.master_screen.withdraw()
         #self.master_screen.attributes("-transparent", "blue")
-        self.picture_frame = Frame(self.master_screen, background = "blue")
+        self.picture_frame = Frame(self.master_screen, background = "#EBC7E6")
         self.picture_frame.pack(fill=BOTH, expand=YES)
 
     def takeBoundedScreenShot(self, x1, y1, x2, y2):
-        im = pyautogui.screenshot(region=(x1, y1, x2, y2))
+        screnshot_image = pyautogui.screenshot(region=(x1, y1, x2, y2))
+        
         x = datetime.datetime.now()
         #fileName = x.strftime("%f")
         #im.save("img/snips/" + fileName + ".png")
-        write_frame_to_clipbord(im)
+        #write_frame_to_clipbord(im)
+        image_to_clipboard(screnshot_image)
 
 
     def createScreenCanvas(self):
@@ -108,7 +102,7 @@ class Application():
         self.start_x = self.screenCanvas.canvasx(event.x)
         self.start_y = self.screenCanvas.canvasy(event.y)
 
-        self.rect = self.screenCanvas.create_rectangle(self.x, self.y, 1, 1, outline='red', width=3, fill="blue")
+        self.rect = self.screenCanvas.create_rectangle(self.x, self.y, 1, 1, outline='red', width=3, fill="#EBC7E6")
 
     def on_move_press(self, event):
         self.curX, self.curY = (event.x, event.y)
@@ -120,6 +114,7 @@ class Application():
         print(self.start_y)
         print(self.curX)
         print(self.curY)
+
 
 if __name__ == '__main__':
     root = Tk()
